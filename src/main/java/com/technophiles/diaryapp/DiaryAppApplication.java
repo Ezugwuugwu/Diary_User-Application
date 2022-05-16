@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DiaryAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DiaryAppApplication.class, args);
-	}
+		SpringApplication.
 
+				run(DiaryAppApplication.class, args);
+	}
 }

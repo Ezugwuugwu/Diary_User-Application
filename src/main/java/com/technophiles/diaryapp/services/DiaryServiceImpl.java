@@ -19,6 +19,4 @@ public class DiaryServiceImpl implements DiaryService{
         diary.setUser(user);
         return diaryRepository.save(diary);
     }
-
-
 }

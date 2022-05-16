@@ -42,7 +42,7 @@ public class DiaryController {
                     .payload(savedDiary)
                     .isSuccessful(true)
                     .message("diary added successfully")
-                    .statusCode(201)
+                    .statusCode(200)
                     .build();
             return new ResponseEntity<>(apiResponse, HttpStatus.CREATED);
 

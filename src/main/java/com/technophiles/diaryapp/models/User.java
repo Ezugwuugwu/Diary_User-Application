@@ -27,7 +27,7 @@ public class User {
     @Column(unique = true)
     private String email;
 
-    @Size(min = 6, max = 10)
+    @Size(min = 1)
     private String password;
 
     @OneToMany(mappedBy = "user",
@@ -36,15 +36,16 @@ public class User {
             orphanRemoval = true)
     private Set<Diary> diaries;
 
-    @Override
-    public String toString() {
-        return String.format("id:%d\temail:%s", id, email);
-    }
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
         this.diaries = new HashSet<>();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("id:%d\temail:%s", id, email);
     }
 
     public void addDiary(Diary diary){
