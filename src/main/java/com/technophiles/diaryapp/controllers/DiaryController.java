@@ -21,8 +21,8 @@ import javax.validation.constraints.NotNull;
 @RequestMapping("api/v3/diaryApp/diaries")
 @Slf4j
 public class DiaryController {
-    private DiaryService diaryService;
-    private UserService userService;
+    private final DiaryService diaryService;
+    private final UserService userService;
 
 
     @Autowired
@@ -32,8 +32,8 @@ public class DiaryController {
     }
 
     @PostMapping("/create/{userId}")
-    private ResponseEntity<?> createDiary(@Valid @NotNull @NotBlank @PathVariable("userId") String userId, @NotNull @NotBlank @RequestParam String title){
-        log.info("User Service --> {}", userService);
+    private ResponseEntity<?> createDiary(@Valid @NotNull @NotBlank @PathVariable("userId") String userId,
+                                          @NotNull @NotBlank @RequestParam String title){
         try {
             User user = userService.findById(Long.valueOf(userId));
             Diary diary = diaryService.createDiary(title,user);

@@ -19,8 +19,8 @@ import javax.validation.constraints.NotNull;
 @RestController
 @RequestMapping("api/v3/diaryApp")
 public class UserController {
-    private UserService userService;
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final UserService userService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public UserController(UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userService = userService;
